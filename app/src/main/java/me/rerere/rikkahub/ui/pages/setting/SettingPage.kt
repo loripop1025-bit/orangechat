@@ -274,6 +274,12 @@ fun SettingPage(vm: SettingVM = koinViewModel()) {
                         headlineContent = { Text("系统工具") },
                     )
                     item(
+                        onClick = { navController.navigate(Screen.WebView("http://101.43.78.19:5002")) },
+                        leadingContent = { Icon(HugeIcons.Favourite, null) },
+                        supportingContent = { Text("户型图、约定与待办、账本、日记架，都在这扇门后") },
+                        headlineContent = { Text("陸的家") },
+                    )
+                    item(
                         onClick = { navController.navigate(Screen.SettingProactiveMessage) },
                         leadingContent = { Icon(HugeIcons.WavingHand01, null) },
                         supportingContent = { Text("AI 在设定间隔内主动发消息，有记忆有上下文") },
