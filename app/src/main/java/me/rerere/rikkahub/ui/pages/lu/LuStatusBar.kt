@@ -54,7 +54,7 @@ fun LuStatusBar(onOpen: () -> Unit) {
             .fillMaxWidth()
             .background(MaterialTheme.colorScheme.surfaceVariant)
             .clickable { onOpen() }
-            .padding(horizontal = 16.dp, vertical = 4.dp)
+            .padding(horizontal = 16.dp, vertical = 10.dp)
     ) {
         Row {
             Text(
