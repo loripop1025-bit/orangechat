@@ -38,6 +38,7 @@ import me.rerere.rikkahub.data.datastore.SettingsStore
 import me.rerere.rikkahub.data.service.DailySummaryService
 import me.rerere.rikkahub.data.service.DeviceEventAiTriggerService
 import me.rerere.rikkahub.data.service.DeviceEventTrackingService
+import me.rerere.rikkahub.data.service.LuHomeEventWorker
 import me.rerere.rikkahub.data.service.ProactiveMessageService
 import me.rerere.rikkahub.data.service.SupabaseSyncService
 import me.rerere.rikkahub.service.ChatService
@@ -113,6 +114,10 @@ class RikkaHubApp : Application() {
 
         // Reschedule proactive message alarm if enabled
         rescheduleProactiveMessageIfEnabled()
+
+        // Poll luhome (陸的家) event queue every 15 min -> forward to proactive trigger
+        runCatching { LuHomeEventWorker.schedule(this) }
+            .onFailure { Log.e(TAG, "LuHomeEventWorker schedule failed", it) }
 
         // Reschedule Supabase sync alarm if enabled
         rescheduleSupabaseSyncIfEnabled()
