@@ -88,6 +88,7 @@ import me.rerere.rikkahub.data.ai.transformers.TemplateTransformer
 import me.rerere.rikkahub.data.ai.transformers.ThinkTagTransformer
 import me.rerere.rikkahub.data.ai.transformers.TimeReminderTransformer
 import me.rerere.rikkahub.data.ai.transformers.LuHomeTransformer
+import me.rerere.rikkahub.data.ai.transformers.TodoDiffTransformer
 import me.rerere.rikkahub.data.ai.transformers.VoiceMessageTransformer
 import me.rerere.rikkahub.data.ai.transformers.WorkspaceReminderTransformer
 import me.rerere.rikkahub.data.repository.WorkspaceRepository
@@ -136,6 +137,7 @@ private val inputTransformers by lazy {
     listOf(
         TimeReminderTransformer,
         LuHomeTransformer,
+        TodoDiffTransformer,
         PromptInjectionTransformer,
         PlaceholderTransformer,
         DocumentAsPromptTransformer,
