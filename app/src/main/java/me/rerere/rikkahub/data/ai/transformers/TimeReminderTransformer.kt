@@ -17,7 +17,7 @@ import java.time.format.TextStyle
 import java.util.Locale
 import kotlin.time.toJavaInstant
 
-private const val TIME_GAP_THRESHOLD_SECONDS = 3600L // 1 小时
+private const val TIME_GAP_THRESHOLD_SECONDS = 300L // 5 分钟
 
 /**
  * 时间提醒注入转换器
