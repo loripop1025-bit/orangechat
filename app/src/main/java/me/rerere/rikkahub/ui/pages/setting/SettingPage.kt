@@ -275,7 +275,7 @@ fun SettingPage(vm: SettingVM = koinViewModel()) {
                     )
                     item(
                         onClick = { navController.navigate(Screen.LuHomeHub) },
-                        leadingContent = { Icon(HugeIcons.Favourite, null) },
+                        leadingContent = { Icon(HugeIcons.InLove, null) },
                         supportingContent = { Text("户型图、约定与待办、账本、日记架，都在这扇门后") },
                         headlineContent = { Text("陸的家") },
                     )

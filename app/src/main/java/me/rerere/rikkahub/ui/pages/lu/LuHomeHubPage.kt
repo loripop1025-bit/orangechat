@@ -30,7 +30,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import me.rerere.rikkahub.Screen
-import me.rerere.rikkahub.ui.components.nav.LocalNavController
+import me.rerere.rikkahub.ui.context.LocalNavController
 
 @Composable
 fun LuHomeHubPage() {

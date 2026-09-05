@@ -34,7 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import me.rerere.rikkahub.ui.components.nav.LocalNavController
+import me.rerere.rikkahub.ui.context.LocalNavController
 import org.json.JSONArray
 
 private val COLS = listOf("taki" to "她的", "lu" to "他的", "ours" to "我们的")
