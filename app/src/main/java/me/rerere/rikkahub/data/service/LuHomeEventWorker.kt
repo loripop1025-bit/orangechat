@@ -47,7 +47,7 @@ class LuHomeEventWorker(
 
         fun schedule(context: Context) {
             val request = PeriodicWorkRequestBuilder<LuHomeEventWorker>(15, TimeUnit.MINUTES).build()
-            WorkManager.getInstance(context).enqueueUniqueWork(
+            WorkManager.getInstance(context).enqueueUniquePeriodicWork(
                 UNIQUE_WORK_NAME,
                 ExistingPeriodicWorkPolicy.KEEP,
                 request
