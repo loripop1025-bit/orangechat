@@ -274,7 +274,7 @@ fun SettingPage(vm: SettingVM = koinViewModel()) {
                         headlineContent = { Text("系统工具") },
                     )
                     item(
-                        onClick = { navController.navigate(Screen.WebView("http://101.43.78.19:5002")) },
+                        onClick = { navController.navigate(Screen.LuHomeHub) },
                         leadingContent = { Icon(HugeIcons.Favourite, null) },
                         supportingContent = { Text("户型图、约定与待办、账本、日记架，都在这扇门后") },
                         headlineContent = { Text("陸的家") },

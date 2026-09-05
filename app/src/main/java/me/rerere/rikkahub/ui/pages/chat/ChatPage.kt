@@ -272,6 +272,8 @@ private fun ChatPageContent(
         AssistantBackground(setting = setting)
         Scaffold(
             topBar = {
+                Column {
+
                 TopBar(
                     settings = setting,
                     conversation = conversation,
@@ -302,6 +304,9 @@ private fun ChatPageContent(
                         }
                     },
                 )
+            
+                    LuStatusBar(onOpen = { navController.navigate(Screen.LuHomeHub) })
+                }
             },
             bottomBar = {
                 ChatInput(

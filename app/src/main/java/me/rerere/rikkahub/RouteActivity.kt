@@ -158,6 +158,9 @@ import me.rerere.rikkahub.ui.pages.setting.SettingSearchPage
 import me.rerere.rikkahub.ui.pages.setting.SettingSpeechPage
 import me.rerere.rikkahub.ui.pages.setting.SettingWebPage
 import me.rerere.rikkahub.ui.pages.setting.SettingSystemToolsPage
+import me.rerere.rikkahub.ui.pages.lu.LuHomeHubPage
+import me.rerere.rikkahub.ui.pages.lu.LuTodoPage
+import me.rerere.rikkahub.ui.pages.lu.LuLedgerPage
 import me.rerere.rikkahub.ui.pages.setting.SecuritySettingPage
 import me.rerere.rikkahub.ui.pages.setting.SettingProactiveMessagePage
 import me.rerere.rikkahub.ui.pages.setting.SettingWeixinBotPage
@@ -683,6 +686,18 @@ entry<Screen.Extensions> {
                                 StatsPage()
                             }
 
+                            entry<Screen.LuHomeHub> {
+                                LuHomeHubPage()
+                            }
+
+                            entry<Screen.LuTodo> {
+                                LuTodoPage()
+                            }
+
+                            entry<Screen.LuLedger> {
+                                LuLedgerPage()
+                            }
+
                             entry<Screen.SettingSystemTools> {
                                 SettingSystemToolsPage()
                             }
@@ -946,6 +961,12 @@ sealed interface Screen : NavKey {
     @Serializable
     data object Translator : Screen
 
+    @Serializable
+    data object LuHomeHub : Screen
+    @Serializable
+    data object LuTodo : Screen
+    @Serializable
+    data object LuLedger : Screen
     @Serializable
     data object Setting : Screen
 
