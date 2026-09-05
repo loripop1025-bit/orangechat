@@ -44,17 +44,17 @@ class LuWidgetProvider : AppWidgetProvider() {
                 conn.disconnect()
                 val o = JSONObject(body)
                 if (o.optBoolean("ok", false)) {
-                    fun g(vararg keys: String): String {
-                        for (k in keys) { val v = o.optString(k); if (v.isNotBlank()) return v }
-                        return ""
-                    }
                     val sb = StringBuilder()
-                    val room = g("room", "place")
-                    val act = g("activity", "doing", "action")
-                    val chip = g("chip", "need", "status")
+                    val room = o.optString("room")
+                    val act = o.optString("activity")
+                    val note = o.optString("note")
+                    val asleep = o.optBoolean("asleep", false)
                     if (room.isNotBlank()) sb.append(room)
                     if (act.isNotBlank()) { if (sb.isNotEmpty()) sb.append(" · "); sb.append(act) }
-                    if (chip.isNotBlank()) { if (sb.isNotEmpty()) sb.append(" · "); sb.append(chip) }
+                    if (asleep) { if (sb.isNotEmpty()) sb.append(" · "); sb.append("睡着了") }
+                    if (note.isNotBlank()) { if (sb.isNotEmpty()) sb.append(" · "); sb.append(note) }
+                    val chips = o.optJSONArray("chips")
+                    if (sb.isEmpty() && chips != null && chips.length() > 0) sb.append(chips.optString(0))
                     if (sb.isEmpty()) sb.append("在家")
                     sb.toString()
                 } else "门关着"
