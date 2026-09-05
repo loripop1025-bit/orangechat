@@ -1,5 +1,6 @@
 package me.rerere.rikkahub.ui.pages.lu
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -53,8 +54,7 @@ fun LuHomeHubPage() {
         Spacer(Modifier.height(12.dp))
 
         Card(
-            onClick = { nav.navigate(Screen.WebView(LuApi.baseUrl(ctx))) },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().clickable { nav.navigate(Screen.WebView(LuApi.baseUrl(ctx))) },
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
         ) {
             Column(Modifier.padding(18.dp)) {
@@ -65,8 +65,7 @@ fun LuHomeHubPage() {
         }
         Spacer(Modifier.height(10.dp))
         Card(
-            onClick = { nav.navigate(Screen.LuTodo) },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().clickable { nav.navigate(Screen.LuTodo) },
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer)
         ) {
             Column(Modifier.padding(18.dp)) {
@@ -77,8 +76,7 @@ fun LuHomeHubPage() {
         }
         Spacer(Modifier.height(10.dp))
         Card(
-            onClick = { nav.navigate(Screen.LuLedger) },
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth().clickable { nav.navigate(Screen.LuLedger) },
             colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer)
         ) {
             Column(Modifier.padding(18.dp)) {

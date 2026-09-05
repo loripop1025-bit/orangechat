@@ -93,8 +93,8 @@ fun LuTodoPage() {
         }
         Spacer(Modifier.height(8.dp))
         val list = todos ?: JSONArray()
-        val filtered = (0 until list.length()).map { list.optJSONObject(it) }
-            .filter { it?.optString("col") == col }
+        val filtered = (0 until list.length()).mapNotNull { list.optJSONObject(it) }
+            .filter { it.optString("col") == col }
         LazyColumn(Modifier.fillMaxSize()) {
             items(filtered) { t ->
                 val done = t.optBoolean("done")
