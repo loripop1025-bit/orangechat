@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Restore material-color-utilities submodule
+        run: |
+          git clone https://github.com/material-foundation/material-color-utilities.git material3/material-color-utilities
+          cd material3/material-color-utilities && git checkout 6fd88eb3e95ba1d457842e2a2bf847d06b3a018a
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
