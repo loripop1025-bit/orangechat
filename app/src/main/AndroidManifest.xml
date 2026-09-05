@@ -363,12 +363,6 @@
         android:value="qq bot websocket message polling" />
     </service>
 
-    <!-- Voice Call Background Service -->
-    <service
-      android:name=".service.VoiceCallService"
-      android:exported="false"
-      android:foregroundServiceType="microphone" />
-
     <!-- KeepAlive Restart Receiver（提升国产 ROM 存活率） -->
     <receiver
       android:name=".service.KeepAliveRestartReceiver"

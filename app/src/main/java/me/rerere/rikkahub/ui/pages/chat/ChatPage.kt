@@ -548,14 +548,6 @@ private fun TopBar(
         actions = {
             IconButton(
                 onClick = {
-                    onVoiceCall()
-                }
-            ) {
-                Icon(HugeIcons.Voice, "Voice Call")
-            }
-
-            IconButton(
-                onClick = {
                     onClickMenu()
                 }
             ) {

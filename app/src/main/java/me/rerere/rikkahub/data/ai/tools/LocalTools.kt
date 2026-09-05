@@ -587,7 +587,8 @@ class LocalTools(
         if (options.contains(LocalToolOption.Tts)) {
             tools.add(ttsTool)
         }
-        if (options.contains(LocalToolOption.RequestVoiceCall) && conversationId != null) {
+        // voiceCall removed
+        if (false && options.contains(LocalToolOption.RequestVoiceCall) && conversationId != null) {
             tools.add(createRequestVoiceCallTool(conversationId))
         }
         if (options.contains(LocalToolOption.AskUser)) {
